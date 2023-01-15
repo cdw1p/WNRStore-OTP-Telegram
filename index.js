@@ -61,13 +61,13 @@ bot.on('message', async (msg) => {
       }
       // --- [ Show List Product ] ----
       else if (chattText.match(/\/list_product/gi)) {
-        const messageProduct = globalDataProduct.data.map((data, index) => { return `(${index + 1}) ${data.name}` }).join('\n')
+        const messageProduct = globalDataProduct.map((data, index) => { return `(${index + 1}) ${data.name}` }).join('\n')
         const messageFormat = `Berikut daftar produk layanan :\n\n${messageProduct}`
         bot.sendMessage(chatId, messageFormat)
       }
       // --- [ Show List Operator ] ----
       else if (chattText.match(/\/list_operator/gi)) {
-        const messageOperator = globalDataOperator.data.map((data, index) => { return `(${index + 1}) ${data.name}` }).join('\n')
+        const messageOperator = globalDataOperator.map((data, index) => { return `(${index + 1}) ${data.name}` }).join('\n')
         const messageFormat = `Berikut daftar operator yang tersedia :\n\n${messageOperator}`
         bot.sendMessage(chatId, messageFormat)
       }
